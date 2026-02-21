@@ -107,7 +107,7 @@ enum CompanionMessages {
                 m.append("Hey, you haven't logged an attack in \(days) day\(days == 1 ? "" : "s"). That's progress.")
             }
             if sessionCount > 0 {
-                m.append("You've used PanicPal \(sessionCount) time\(sessionCount == 1 ? "" : "s"). You're building a toolkit.")
+                m.append("You've used CalmNow \(sessionCount) time\(sessionCount == 1 ? "" : "s"). You're building a toolkit.")
             }
             return m
         }()

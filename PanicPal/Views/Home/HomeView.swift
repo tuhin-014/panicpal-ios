@@ -31,7 +31,7 @@ struct HomeView: View {
             VStack(spacing: 16) {
                 // Top bar
                 HStack {
-                    Text("PanicPal")
+                    Text("CalmNow")
                         .font(.title2.weight(.bold))
                         .foregroundStyle(AppColors.deepTeal)
                     

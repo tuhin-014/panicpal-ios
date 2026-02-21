@@ -29,7 +29,7 @@ struct OnboardingView: View {
                 .font(.system(size: 80))
                 .foregroundStyle(AppColors.deepTeal)
             
-            Text("PanicPal")
+            Text("CalmNow")
                 .font(.largeTitle.weight(.bold))
                 .foregroundStyle(AppColors.deepTeal)
             
@@ -69,11 +69,22 @@ struct OnboardingView: View {
                 .font(.title.weight(.semibold))
                 .foregroundStyle(AppColors.deepTeal)
             
-            Text("PanicPal provides breathing exercises, grounding techniques, and educational content for general wellness. It is not a medical device and does not diagnose, treat, or cure any condition. If you are experiencing a medical emergency, call 911. Always consult a healthcare professional for mental health concerns.")
+            Text("CalmNow provides breathing exercises, grounding techniques, and educational content for general wellness. It is not a medical device and does not diagnose, treat, or cure any condition. If you are experiencing a medical emergency, call 911. Always consult a healthcare professional for mental health concerns.")
                 .font(.body)
                 .multilineTextAlignment(.center)
                 .foregroundStyle(.secondary)
                 .padding(.horizontal, 30)
+            
+            Link(destination: URL(string: "https://tuhin-014.github.io/app-policies/panicpal/privacy-policy.html")!) {
+                HStack {
+                    Image(systemName: "hand.raised.fill")
+                        .font(.subheadline)
+                    Text("Privacy Policy")
+                        .font(.subheadline)
+                }
+                .foregroundStyle(AppColors.deepTeal)
+            }
+            .padding(.top, 4)
             
             Spacer()
             

@@ -282,6 +282,10 @@ struct SettingsView: View {
         try? modelContext.delete(model: DailyCheckIn.self)
         try? modelContext.delete(model: FavoriteReassurance.self)
         try? modelContext.delete(model: LessonProgress.self)
+        try? modelContext.delete(model: EmergencyContact.self)
+        try? modelContext.delete(model: UserSettings.self)
         try? modelContext.save()
+        settings = nil
+        loadSettings()
     }
 }

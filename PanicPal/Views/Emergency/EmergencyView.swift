@@ -4,6 +4,8 @@ import SwiftData
 struct EmergencyView: View {
     @Environment(\.dismiss) private var dismiss
     @Query(sort: \EmergencyContact.sortOrder) private var contacts: [EmergencyContact]
+    @State private var showCallConfirm = false
+    @State private var pendingNumber: String?
     
     var body: some View {
         NavigationStack {
@@ -11,7 +13,8 @@ struct EmergencyView: View {
                 VStack(spacing: 16) {
                     // 911 Button
                     Button {
-                        callNumber("911")
+                        pendingNumber = "911"
+                        showCallConfirm = true
                     } label: {
                         HStack {
                             Image(systemName: "phone.fill")
@@ -112,6 +115,15 @@ struct EmergencyView: View {
                         Image(systemName: "xmark")
                     }
                 }
+            }
+            .alert("Call 911?", isPresented: $showCallConfirm) {
+                Button("Call 911", role: .destructive) {
+                    if let number = pendingNumber { callNumber(number) }
+                    pendingNumber = nil
+                }
+                Button("Cancel", role: .cancel) { pendingNumber = nil }
+            } message: {
+                Text("Are you sure you want to call 911? This will connect you to emergency services.")
             }
         }
     }
